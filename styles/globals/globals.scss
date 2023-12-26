@@ -57,11 +57,29 @@ picture {
   padding: 10vmin 0;
 }
 
+.btn_primary {
+  padding: 10px;
+  border: none;
+  background-color: palevioletred;
+  color: var(--color_white);
+  border-radius: 10px;
+  font-family: "Paytone One";
+  width: 100%;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgb(180, 81, 114);
+  }
+}
+
 //classes for fonts
 .font_primary {
   font-family: var(--font_primary);
   font-weight: normal;
 }
+
 .font_secondary {
   font-family: var(--font_secondary);
 }
