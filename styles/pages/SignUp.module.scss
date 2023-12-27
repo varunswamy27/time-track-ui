@@ -34,7 +34,6 @@
 						color: var(--color_text);
 						opacity: 0.6;
 						font-weight: normal;
-						font-size: 14px;
 						text-transform: uppercase;
 					}
 
@@ -44,11 +43,25 @@
 						border-radius: 10px;
 						border: 1px solid gray;
 						outline: none;
+						font-family: var(--font_primary);
+						color: var(--color_text);
 
 						&:focus {
 							border: 1px solid palevioletred;
 						}
 					}
+				}
+			}
+
+			.alternate_login {
+				color: var(--color_text);
+				cursor: pointer;
+				padding: 10px;
+				border-radius: 10px;
+				transition: all 0.2s ease;
+
+				&:hover {
+					background-color: lightgray;
 				}
 			}
 		}
