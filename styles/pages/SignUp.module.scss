@@ -2,6 +2,9 @@
 
 .signup_page {
 	width: 100%;
+	background-color: #564260;
+	@extend %relative_box;
+	overflow: hidden;
 
 	.signup_wrap {
 		width: 100%;
@@ -10,10 +13,12 @@
 
 		.signup_box {
 			border: 1px solid lightgray;
+			background-color: var(--color_white);
 			border-radius: 15px;
-			box-shadow: 12px -12px 24px #dbd1d1,
-				-12px 12px 24px #cec8c8;
+			// box-shadow: 12px -12px 24px #dbd1d1,
+			// 	-12px 12px 24px #cec8c8;
 			padding: 40px 35px;
+			z-index: 5;
 
 			.title {
 				color: palevioletred;
@@ -63,6 +68,190 @@
 				&:hover {
 					background-color: lightgray;
 				}
+			}
+		}
+	}
+
+	@keyframes roatateVector {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes bounceVector {
+		0% {
+			transform: translateY(0);
+		}
+
+		50% {
+			transform: translateY(30px);
+		}
+
+		100% {
+			transform: translateY(0px);
+		}
+	}
+
+	@keyframes bounceScaleVector {
+		0% {
+			transform: translateY(0) scale(2);
+		}
+
+		50% {
+			transform: translateY(40px) scale(2);
+		}
+
+		100% {
+			transform: translateY(0px) scale(2);
+		}
+	}
+
+	@keyframes bounceScaleVectorMobile {
+		0% {
+			transform: translateY(0) scale(1);
+		}
+
+		50% {
+			transform: translateY(40px) scale(1);
+		}
+
+		100% {
+			transform: translateY(0px) scale(1);
+		}
+	}
+
+	@keyframes bounceSideVector {
+		0% {
+			transform: translateX(0) scale(2);
+		}
+
+		50% {
+			transform: translateX(40px) scale(2);
+		}
+
+		100% {
+			transform: translateX(0px) scale(2);
+		}
+	}
+
+	@keyframes bounceSideVectorMobile {
+		0% {
+			transform: translateX(0) scale(1);
+		}
+
+		50% {
+			transform: translateX(40px) scale(1);
+		}
+
+		100% {
+			transform: translateX(0px) scale(1);
+		}
+	}
+
+	@keyframes swingVector {
+		0% {
+			transform: rotate(200deg) scale(1.4);
+		}
+
+		50% {
+			transform: rotate(150deg) scale(1.4);
+		}
+
+		100% {
+			transform: rotate(200deg) scale(1.4);
+		}
+	}
+
+	@keyframes swingVectorMobile {
+		0% {
+			transform: rotate(200deg) scale(1);
+		}
+
+		50% {
+			transform: rotate(150deg) scale(1);
+		}
+
+		100% {
+			transform: rotate(200deg) scale(1);
+		}
+	}
+
+	.vector {
+		position: absolute;
+
+		&.square {
+			top: 22%;
+			left: 20%;
+			animation: infinite roatateVector 15s linear;
+
+			@include sm-down {
+				top: 40%;
+				left: -10%;
+			}
+		}
+
+		&.semi_circle {
+			bottom: 0%;
+			left: 10%;
+			animation: infinite swingVector 7s linear;
+
+			@include sm-down {
+				animation: infinite swingVectorMobile 7s linear;
+				left: -4%;
+			}
+		}
+
+		&.circle {
+			width: 200px;
+			height: 200px;
+			background-color: #412A4C;
+			border-radius: 50%;
+			bottom: 25%;
+			right: 20%;
+			animation: infinite bounceVector 5s linear;
+
+			@include sm-down {
+				bottom: 28%;
+				right: -10%;
+			}
+		}
+
+		&.scale_circle {
+			width: 200px;
+			height: 200px;
+			background-color: #412A4C;
+			border-radius: 50%;
+			top: -5%;
+			left: -5%;
+			animation: infinite bounceScaleVector 5s linear;
+
+			@include sm-down {
+				animation: infinite bounceScaleVectorMobile 5s linear;
+			}
+		}
+
+		&.triangle {
+			bottom: -20px;
+			right: 4%;
+			animation: infinite roatateVector 15s linear;
+
+			@include sm-down {
+				right: -4%;
+			}
+		}
+
+		&.donut {
+			top: 0;
+			right: 0;
+			animation: infinite bounceSideVector 5s linear;
+
+			@include sm-down {
+				animation: infinite bounceSideVectorMobile 5s linear;
+				top: 10%;
 			}
 		}
 	}

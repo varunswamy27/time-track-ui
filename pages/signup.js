@@ -1,15 +1,22 @@
-// MODULES
+// MODULES //
 import { useRef } from "react";
 
-// STYLES
+// STYLES //
 import styles from "../styles/pages/SignUp.module.scss";
 
-//COMPONENTS
+// COMPONENTS //
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
-// PLUGINS
+// PLUGINS //
 import { useForm } from "react-hook-form";
+
+// IMAGES //
+import Square from "@/public/img/icons/square.svg";
+import SemiCircle from "@/public/img/icons/semi-circle.svg";
+import Triangle from "@/public/img/icons/triangle.svg";
+import Donut from "@/public/img/icons/donut.svg";
 
 export default function SignUp() {
   const formRef = useRef();
@@ -93,6 +100,20 @@ export default function SignUp() {
               </Link>
             </div>
           </div>
+        </div>
+        <div className={`${styles.square} ${styles.vector}`}>
+          <Image src={Square} alt="Square" />
+        </div>
+        <div className={`${styles.semi_circle} ${styles.vector}`}>
+          <Image src={SemiCircle} alt="Square" />
+        </div>
+        <div className={` ${styles.scale_circle} ${styles.vector}`}></div>
+        <div className={`${styles.circle} ${styles.vector}`}></div>
+        <div className={`${styles.triangle} ${styles.vector}`}>
+          <Image src={Triangle} alt="Square" />
+        </div>
+        <div className={`${styles.donut} ${styles.vector}`}>
+          <Image src={Donut} alt="Square" />
         </div>
       </main>
     </div>
