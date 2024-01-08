@@ -29,35 +29,6 @@
 				margin-bottom: 20px;
 			}
 
-			.form_group {
-
-				.form_box {
-					width: 100%;
-					margin-bottom: 15px;
-
-					label {
-						color: var(--color_text);
-						opacity: 0.6;
-						font-weight: normal;
-						text-transform: uppercase;
-					}
-
-					input {
-						width: 100%;
-						padding: 10px;
-						border-radius: 10px;
-						border: 1px solid gray;
-						outline: none;
-						font-family: var(--font_primary);
-						color: var(--color_text);
-
-						&:focus {
-							border: 1px solid palevioletred;
-						}
-					}
-				}
-			}
-
 			.alternate_login {
 				color: var(--color_text);
 				cursor: pointer;

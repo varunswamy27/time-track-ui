@@ -1,0 +1,77 @@
+@import "../helpers/helpers.scss";
+
+.vector {
+	position: absolute;
+
+	&.square {
+		top: 22%;
+		left: 20%;
+		animation: infinite roatateVector 15s linear;
+
+		@include sm-down {
+			top: 40%;
+			left: -10%;
+		}
+	}
+
+	&.semi_circle {
+		bottom: 0%;
+		left: 10%;
+		animation: infinite swingVector 7s linear;
+
+		@include sm-down {
+			animation: infinite swingVectorMobile 7s linear;
+			left: -4%;
+		}
+	}
+
+	&.circle {
+		width: 200px;
+		height: 200px;
+		background-color: #412A4C;
+		border-radius: 50%;
+		bottom: 25%;
+		right: 20%;
+		animation: infinite bounceVector 5s linear;
+
+		@include sm-down {
+			bottom: 28%;
+			right: -10%;
+		}
+	}
+
+	&.scale_circle {
+		width: 200px;
+		height: 200px;
+		background-color: #412A4C;
+		border-radius: 50%;
+		top: -5%;
+		left: -5%;
+		animation: infinite bounceScaleVector 5s linear;
+
+		@include sm-down {
+			animation: infinite bounceScaleVectorMobile 5s linear;
+		}
+	}
+
+	&.triangle {
+		bottom: -20px;
+		right: 4%;
+		animation: infinite roatateVector 15s linear;
+
+		@include sm-down {
+			right: -4%;
+		}
+	}
+
+	&.donut {
+		top: 0;
+		right: 0;
+		animation: infinite bounceSideVector 5s linear;
+
+		@include sm-down {
+			animation: infinite bounceSideVectorMobile 5s linear;
+			top: 10%;
+		}
+	}
+}

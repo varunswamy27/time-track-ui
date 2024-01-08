@@ -1,16 +1,15 @@
-// MODULES
-import { useRef } from "react";
+// MODULES //
 
-// STYLES
+// STYLES //
 import styles from "../styles/pages/SignUp.module.scss";
 
-//COMPONENTS
+// COMPONENTS //
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import Form from "@/src/components/Form";
 
-// PLUGINS
-import { useForm } from "react-hook-form";
+// PLUGINS //
 
 // IMAGES //
 import Square from "@/public/img/icons/square.svg";
@@ -19,17 +18,6 @@ import Triangle from "@/public/img/icons/triangle.svg";
 import Donut from "@/public/img/icons/donut.svg";
 
 export default function Login() {
-  const formRef = useRef();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({ mode: "onChange" });
-
-  /** function to handle submit */
-  const onSubmit = async (Data, e) => {
-    e.preventDefault();
-  };
   return (
     <div>
       <Head>
@@ -44,53 +32,7 @@ export default function Login() {
             <div className={styles.signup_box}>
               <h2 className={`${styles.title} text_center`}>Time Track</h2>
               <p className="text_center text_xs">Login and get tracking!</p>
-              <div className={styles.form_group}>
-                <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-                  <div className={styles.form_box}>
-                    <label className="text_xxs" htmlFor="email">
-                      Email
-                    </label>
-                    <input
-                      type="text"
-                      name="email"
-                      id="email"
-                      {...register("email", {
-                        required: true,
-                        pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-                      })}
-                    />
-                    {errors.email && errors.email.type == "required" && (
-                      <p className="error text_xxs">This field is required*</p>
-                    )}
-                    {errors.email && errors.email.type == "pattern" && (
-                      <p className="error text_xxs">Enter valid email*</p>
-                    )}{" "}
-                  </div>
-                  <div className={styles.form_box}>
-                    <label className="text_xxs" htmlFor="password">
-                      Password
-                    </label>
-                    <input
-                      type="text"
-                      name="password"
-                      id="password"
-                      {...register("password", {
-                        required: true,
-                        maxLength: 10,
-                      })}
-                    />
-                    {errors.password && errors.password.type == "required" && (
-                      <p className="error text_xxs">This field is required*</p>
-                    )}{" "}
-                  </div>
-                  <button
-                    type="submit"
-                    className="btn_primary text_500 text_xs"
-                  >
-                    Log in via email
-                  </button>
-                </form>
-              </div>
+              <Form />
               <Link href={"/signup"}>
                 <p
                   className={`${styles.alternate_login} text_center text_xxs text_400`}

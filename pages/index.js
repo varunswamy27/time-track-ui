@@ -2,8 +2,8 @@ import styles from "../styles/pages/Home.module.scss";
 
 //import components
 import Head from "next/head";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Footer from "../src/components/Footer";
+import Header from "../src/components/Header";
 
 export default function Home() {
   return (
@@ -14,11 +14,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      {/* <Header /> */}
       <main className={`${styles.index_page} bg_secondary`}>
         <h2>This is ting base next.js template</h2>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
